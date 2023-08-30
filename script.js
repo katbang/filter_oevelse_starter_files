@@ -94,7 +94,6 @@ function isElectric(vehicle) {
   }
 }
 function showElectrics() {
-  ulPointer.innerHTML = newInner;
   const onlyElectric = vehicles.filter(isElectric);
   showTheseVehicles(onlyElectric);
 }
@@ -107,7 +106,6 @@ function minTwoSeats(vehicle) {
   }
 }
 function showMinTwo() {
-  ulPointer.innerHTML = newInner;
   const moreThanOneSeat = vehicles.filter(minTwoSeats);
   showTheseVehicles(moreThanOneSeat);
 }
@@ -120,7 +118,6 @@ function electricJonas(vehicle) {
   }
 }
 function showJonasEl() {
-  ulPointer.innerHTML = newInner;
   const onlyElectricJonas = vehicles.filter(electricJonas);
   showTheseVehicles(onlyElectricJonas);
 }
@@ -133,7 +130,6 @@ function twoSeatedRugbrød(vehicle) {
   }
 }
 function showTwoRugbrød() {
-  ulPointer.innerHTML = newInner;
   const minTwoSeatedRugbrød = vehicles.filter(twoSeatedRugbrød);
   showTheseVehicles(minTwoSeatedRugbrød);
 }
