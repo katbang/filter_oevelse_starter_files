@@ -78,7 +78,7 @@ function showTheseVehicles(arr) {
 }
 
 function isElectric(vehicle) {
-  if (vehicle.isElectric === true) {
+  if (vehicle.isElectric) {
     return true;
   } else {
     return false;
@@ -109,7 +109,7 @@ function showMinTwo() {
 document.querySelector(".two").addEventListener("mousedown", showMinTwo);
 
 function electricJonas(vehicle) {
-  if (vehicle.isElectric === true && vehicle.ownedBy === "Jonas") {
+  if (vehicle.isElectric && vehicle.ownedBy === "Jonas") {
     return true;
   } else {
     return false;
