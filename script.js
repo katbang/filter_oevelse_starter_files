@@ -37,15 +37,25 @@ const newInner = `<li><strong>Type</strong></li>
 <li><strong>Electric</strong></li>
 <li><strong>Tandem</strong></li>`;
 
+document.querySelector(".el").addEventListener("mousedown", showElectrics);
+document.querySelector(".two").addEventListener("mousedown", showMinTwo);
+document.querySelector(".jonas").addEventListener("mousedown", showJonasEl);
+document
+  .querySelector(".rugbrød")
+  .addEventListener("mousedown", showTwoRugbrød);
+
+document.querySelector(".alle").addEventListener("mousedown", showAll);
+
 showTheseVehicles(vehicles);
 
 function showAll() {
-  ulPointer.innerHTML = "";
   ulPointer.innerHTML = newInner;
   showTheseVehicles(vehicles);
 }
 
 function showTheseVehicles(arr) {
+  ulPointer.innerHTML = "";
+  ulPointer.innerHTML = newInner;
   arr.forEach((each) => {
     ulPointer.innerHTML += `<li>${each.type}</li>`;
     if (each.fuel === undefined) {
@@ -85,12 +95,10 @@ function isElectric(vehicle) {
   }
 }
 function showElectrics() {
-  ulPointer.innerHTML = "";
   ulPointer.innerHTML = newInner;
   const onlyElectric = vehicles.filter(isElectric);
   showTheseVehicles(onlyElectric);
 }
-document.querySelector(".el").addEventListener("mousedown", showElectrics);
 
 function minTwoSeats(vehicle) {
   if (vehicle.passengers >= 2) {
@@ -100,13 +108,10 @@ function minTwoSeats(vehicle) {
   }
 }
 function showMinTwo() {
-  ulPointer.innerHTML = "";
   ulPointer.innerHTML = newInner;
   const moreThanOneSeat = vehicles.filter(minTwoSeats);
   showTheseVehicles(moreThanOneSeat);
 }
-
-document.querySelector(".two").addEventListener("mousedown", showMinTwo);
 
 function electricJonas(vehicle) {
   if (vehicle.isElectric && vehicle.ownedBy === "Jonas") {
@@ -116,12 +121,10 @@ function electricJonas(vehicle) {
   }
 }
 function showJonasEl() {
-  ulPointer.innerHTML = "";
   ulPointer.innerHTML = newInner;
   const onlyElectricJonas = vehicles.filter(electricJonas);
   showTheseVehicles(onlyElectricJonas);
 }
-document.querySelector(".jonas").addEventListener("mousedown", showJonasEl);
 
 function twoSeatedRugbrød(vehicle) {
   if (vehicle.fuel === "Rugbrød" && vehicle.passengers > 1) {
@@ -131,13 +134,7 @@ function twoSeatedRugbrød(vehicle) {
   }
 }
 function showTwoRugbrød() {
-  ulPointer.innerHTML = "";
   ulPointer.innerHTML = newInner;
   const minTwoSeatedRugbrød = vehicles.filter(twoSeatedRugbrød);
   showTheseVehicles(minTwoSeatedRugbrød);
 }
-document
-  .querySelector(".rugbrød")
-  .addEventListener("mousedown", showTwoRugbrød);
-
-document.querySelector(".alle").addEventListener("mousedown", showAll);
