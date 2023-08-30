@@ -54,7 +54,6 @@ function showAll() {
 }
 
 function showTheseVehicles(arr) {
-  ulPointer.innerHTML = "";
   ulPointer.innerHTML = newInner;
   arr.forEach((each) => {
     ulPointer.innerHTML += `<li>${each.type}</li>`;
